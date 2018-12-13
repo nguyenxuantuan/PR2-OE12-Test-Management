@@ -1,0 +1,11 @@
+<h3>
+  <%= t ".Create"%>
+</h3>
+<%= form_with model: @sessionexam do |form| %>
+<%= form.text_field :exam_name, placeholder: "exam_name" %>
+<%= form.text_field :period_for, placeholder: "period_for" %>
+<%= form.text_field :supervisor, placeholder: "supervisor" %>
+<%= form.text_field :create_at, placeholder: "create_at" %>
+<%= form.text_field :updated_at, placeholder: "updated_at" %>
+<%= form.submit %>
+<% end %>

@@ -1,0 +1,38 @@
+<% provide(:title, "All sessions") %>
+<h1>All sessions</h1>
+<table border="1">
+  <tr>
+    <th>Tên Kỳ Thi</th>
+    <th>Thời gian thi</th>
+    <th>Người giám sát</th>
+    <th>thời gian bắt đầu</th>
+    <th>thời gian kết thúc</th>
+    <th>Chỉnh sửa</th>
+    <th>Xóa</th>
+  </tr>
+  <% @sessionexams.each do |sessionexam| %>
+  <tr>
+    <td>
+      <%= link_to sessionexam.exam_name, sessionexam_path(sessionexam) %>
+    </td>
+    <td>
+      <%= sessionexam.period_for %>
+    </td>
+    <td>
+      <%= sessionexam.supervisor %>
+    </td>
+    <td>
+      <%= sessionexam.create_at %>
+    </td>
+    <td>
+      <%= sessionexam.updated_at %>
+    </td>
+    <td>
+      <%= button_to t(".Edit"), edit_sessionexam_path(sessionexam), method: "get"%>
+    </td>
+    <td>
+      <%= button_to t(".Remove"), sessionexam_path(sessionexam), method: "delete", data: { confirm: t(".Are") } %>
+    </td>
+    <% end %>
+</table>
+<%= link_to t(".Add"), new_sessionexam_path %>

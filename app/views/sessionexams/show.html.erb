@@ -1,0 +1,6 @@
+<h4><%= @sessionexam.exam_name %></h4>
+<h4><%= @sessionexam.period_for %></h4>
+<h4><%= @sessionexam.supervisor %></h4>
+<h4><%= @sessionexam.create_at %></h4>
+<h4><%= @sessionexam.updated_at %></h4>
+<%= link_to t(".Remove"), @sessionexam, method: :delete, data: { confirm: t(".Are") } %>

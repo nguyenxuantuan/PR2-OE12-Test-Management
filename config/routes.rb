@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "index#index"
+
+  root "home#index"
   devise_for :users
 
   resources :user do
@@ -8,4 +9,10 @@ Rails.application.routes.draw do
     delete "signout", to: "devise/sessions#destroy"
   end
 
+  resources :sessionexams do
+    get "sessionexams/index"
+    get "sessionexams/show"
+    get "sessionexams/new"
+    get "sessionexams/edit"
+  end
 end
